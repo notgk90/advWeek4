@@ -1,4 +1,4 @@
-package view
+package com.ubaya.advweek4.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

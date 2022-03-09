@@ -1,4 +1,4 @@
-package view
+package com.ubaya.advweek4.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ubaya.advweek4.R
 import kotlinx.android.synthetic.main.fragment_student_list.*
-import viewmodel.ListViewModel
+import com.ubaya.advweek4.viewmodel.ListViewModel
 
 class StudentListFragment : Fragment() {
     private lateinit var viewModel: ListViewModel

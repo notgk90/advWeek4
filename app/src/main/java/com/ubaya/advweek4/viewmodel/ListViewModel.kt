@@ -1,4 +1,4 @@
-package viewmodel
+package com.ubaya.advweek4.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

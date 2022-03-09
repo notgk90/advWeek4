@@ -1,4 +1,4 @@
-package view
+package com.ubaya.advweek4.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
