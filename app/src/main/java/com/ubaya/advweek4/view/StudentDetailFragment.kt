@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.ubaya.advweek4.R
+import com.ubaya.advweek4.util.loadImage
 import com.ubaya.advweek4.viewmodel.DetailViewModel
 import com.ubaya.advweek4.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.fragment_student_detail.*
+import kotlinx.android.synthetic.main.student_list_item.view.*
 
 class StudentDetailFragment : Fragment() {
     private lateinit var detailViewModel: DetailViewModel
@@ -27,6 +29,10 @@ class StudentDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         detailViewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        if(arguments != null){
+            var id = StudentDetailFragmentArgs.fromBundle(requireArguments()).idStudent
+            detailViewModel.setID(id)
+        }
         detailViewModel.fetch()
 
         ObserveDetailViewModel()
@@ -38,6 +44,7 @@ class StudentDetailFragment : Fragment() {
             txtName.setText(it.name)
             txtBod.setText(it.dob)
             txtPhone.setText(it.phone)
+            imageViewDetail.loadImage(it.photoUrl.toString(), progressBarDetail)
         })
     }
 }
